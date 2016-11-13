@@ -131,4 +131,4 @@ if __name__ == "__main__":
                 "You may disconnect power supply.\n" \
                 "Battery charged in {0:.0f} min.".format(
                     battery.stat('charging')))
-        time.sleep(30)
+        time.sleep(60)
