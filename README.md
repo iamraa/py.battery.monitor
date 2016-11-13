@@ -6,6 +6,12 @@ Show message dialog with GTK 3 when battery is extremely low or fully charged. W
 
 No dependencies.
 
+## Alert levels ##
+
+* 5% - extremely low dialog
+* 15% - low notification
+* 95% - charged dialog
+
 # Alternative #
 
 * [Based on acpi & Java](http://linuxsoftware.moncerbae.com/2015/07/how-to-create-battery-warning-in-ubuntu.html)

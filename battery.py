@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 import time
+import subprocess
 import gi
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
@@ -20,6 +21,9 @@ def show_dialog(title="This is an INFO MessageDialog",
     while Gtk.events_pending():
         Gtk.main_iteration_do(True)
 
+def show_notify(title, message=""):
+    subprocess.Popen(['notify-send', title, message])
+    return
 
 class Battery:
     _path = "/sys/class/power_supply/BAT0"
@@ -104,12 +108,15 @@ class Battery:
 
 if __name__ == "__main__":
     battery = Battery()
+
+    # show_notify("Hello", "We start to work")
+
     while True:
         print(battery.status(), battery.percentage(),
               'charging', battery.stat('charging'),
               'discharging', battery.stat('discharging'))
         if not battery.is_charging() and battery.percentage() == 15:
-            show_dialog("Low power",
+            show_notify("Low power",
                         "Maybe, you should to connect power supply.")
         elif not battery.is_charging() and battery.percentage() <= 5:
             show_dialog(
