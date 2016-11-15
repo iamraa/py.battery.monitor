@@ -12,6 +12,13 @@ No dependencies.
 * 15% - low notification
 * 95% - charged dialog
 
+## Autostart ##
+
+To add/remove script to autostart use:
+
+* `./setup.py install`
+* `./setup.py uninstall`
+
 # Alternative #
 
 * [Based on acpi & Java](http://linuxsoftware.moncerbae.com/2015/07/how-to-create-battery-warning-in-ubuntu.html)

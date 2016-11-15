@@ -124,7 +124,7 @@ if __name__ == "__main__":
                 "You have to connect power supply.\n" \
                 "Battery discharged in {0:.0f} min.".format(
                     battery.stat('discharging')),
-                Gtk.MessageType.MESSAGE_WARNING)
+                Gtk.MessageType.WARNING)
         elif battery.is_charging() and battery.percentage() >= 95:
             show_dialog(
                 "Battery fully charged",
