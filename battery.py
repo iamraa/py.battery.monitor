@@ -11,8 +11,11 @@ def show_dialog(title="This is an INFO MessageDialog",
                 text="And this is the secondary text that explains things.",
                 type=Gtk.MessageType.INFO):
     win = Gtk.Window() # maybe remove
-    dialog = Gtk.MessageDialog(win, 0, type,
-                               Gtk.ButtonsType.OK, title)
+    dialog = Gtk.MessageDialog(win,
+                               flags=Gtk.DialogFlags.MODAL,
+                               type=type,
+                               buttons=Gtk.ButtonsType.OK,
+                               message_format=title)
     dialog.format_secondary_text(text)
     dialog.run()  # Pause application
     print("Dialog closed")

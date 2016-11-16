@@ -12,7 +12,7 @@ command = path + "/battery.py"
 # print(name, command)
 
 if len(sys.argv) < 2:
-    print("To add script to autostart you have to call script with option.\nExecute: ./setup.py [install / uninstall]")
+    print("To add script to autostart you have to call script with option.\nExecute: ./setup.py [install / uninstall] [log]")
     exit()
 
 # path to autostart
@@ -20,6 +20,10 @@ dr = home+"/.config/autostart/"
 if not os.path.exists(dr):
     os.makedirs(dr)
 file = dr+name.lower()+".desktop"
+
+# set logging
+if len(sys.argv) == 3 and sys.argv[2] == 'log':
+	command += " > " + path + "/battery.log"
 
 operation = sys.argv[1];
 if operation == "install":
