@@ -17,6 +17,7 @@ def show_dialog(title="This is an INFO MessageDialog",
                                buttons=Gtk.ButtonsType.OK,
                                message_format=title)
     dialog.format_secondary_text(text)
+    dialog.set_keep_above(True)
     dialog.run()  # Pause application
     print("Dialog closed")
     dialog.destroy()
